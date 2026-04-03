@@ -1,0 +1,19 @@
+/* Viral Carts Theme Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --brand-purple: #A855F7;
+  --brand-cyan: #06B6D4;
+  --brand-orange: #F97316;
+  --brand-dark: #0A0A0A;
+}
+
+body {
+  background-color: var(--brand-dark);
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
