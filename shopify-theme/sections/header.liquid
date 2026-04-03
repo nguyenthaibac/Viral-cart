@@ -1,0 +1,48 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-transparent py-6 transition-all duration-300" id="site-header">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    <div class="flex items-center gap-2 group cursor-pointer">
+      <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <span class="text-2xl font-black tracking-tighter glitch-text uppercase italic">VIRAL CARTS</span>
+    </div>
+
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest">
+      {% for link in section.settings.menu.links %}
+        <a href="{{ link.url }}" class="hover:text-cyan-400 transition-colors">{{ link.title }}</a>
+      {% endfor %}
+    </div>
+
+    <div class="flex items-center gap-5">
+      <a href="/search" class="hover:text-cyan-400 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </a>
+      <a href="/cart" class="relative group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="absolute -top-2 -right-2 bg-orange-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const header = document.getElementById('site-header');
+    if (window.scrollY > 20) {
+      header.classList.add('bg-[#0A0A0A]/80', 'backdrop-blur-lg', 'py-4', 'border-b', 'border-white/10');
+      header.classList.remove('bg-transparent', 'py-6');
+    } else {
+      header.classList.remove('bg-[#0A0A0A]/80', 'backdrop-blur-lg', 'py-4', 'border-b', 'border-white/10');
+      header.classList.add('bg-transparent', 'py-6');
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" }
+  ]
+}
+{% endschema %}

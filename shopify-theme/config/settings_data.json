@@ -1,0 +1,25 @@
+{
+  "current": "default",
+  "presets": {
+    "default": {
+      "sections": {
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "heading_accent": "Viral"
+          }
+        },
+        "featured-products": {
+          "type": "featured-products",
+          "settings": {
+            "heading": "Featured Drops"
+          }
+        }
+      },
+      "order": [
+        "hero",
+        "featured-products"
+      ]
+    }
+  }
+}
