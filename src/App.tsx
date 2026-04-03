@@ -121,11 +121,11 @@ const Navbar = () => {
   );
 };
 
-const ProductCard = ({ product }: { product: typeof PRODUCTS[0] }) => {
+const ProductCard = ({ product }: { product: typeof PRODUCTS[0], key?: any }) => {
   return (
     <motion.div 
-      whileHover={{ y: -10 }}
-      className="glass-card overflow-hidden group"
+      whileHover={{ y: -10, scale: 1.02 }}
+      className="glass-card overflow-hidden group hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-shadow duration-300"
     >
       <div className="relative aspect-[4/5] overflow-hidden">
         <img 
